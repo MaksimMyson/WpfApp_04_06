@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <StackPanel Margin="20">
+            <Button Content="Launch Notepad" Click="LaunchNotepad_Click" Margin="10"/>
+            <Button Content="Launch Calculator" Click="LaunchCalculator_Click" Margin="10"/>
+            <Button Content="Launch Paint" Click="LaunchPaint_Click" Margin="10"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox Name="CustomAppTextBox" Width="250" Margin="0,0,10,0" />
+                <Button Content="Launch Custom App" Click="LaunchCustomApp_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
