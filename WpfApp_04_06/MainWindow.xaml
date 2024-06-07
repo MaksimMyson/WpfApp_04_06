@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <StackPanel Margin="20">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox Name="ProcessPathTextBox" Width="250" Margin="0,0,10,0" />
+                <Button Content="Launch Process" Click="LaunchProcess_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button Name="WaitButton" Content="Wait for Exit" Click="WaitForExit_Click" IsEnabled="False" Margin="0,0,10,0"/>
+                <Button Name="KillButton" Content="Kill Process" Click="KillProcess_Click" IsEnabled="False"/>
+            </StackPanel>
+            <TextBlock Name="StatusTextBlock" Text="Enter the path to the application and click 'Launch Process'" Margin="10"/>
+        </StackPanel>
     </Grid>
 </Window>
