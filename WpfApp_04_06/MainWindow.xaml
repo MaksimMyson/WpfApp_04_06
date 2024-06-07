@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
+        <ListView Name="ProcessListView" Grid.Row="0" SelectionChanged="ProcessListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="200"/>
+                    <GridViewColumn Header="PID" DisplayMemberBinding="{Binding Id}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Update Interval (ms):" VerticalAlignment="Center"/>
+                <TextBox Name="IntervalTextBox" Width="100" Margin="5"/>
+                <Button Content="Set Interval" Click="SetIntervalButton_Click" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Update Now" Click="UpdateButton_Click" Margin="5"/>
+                <Button Content="End Process" Click="EndProcessButton_Click" Margin="5"/>
+            </StackPanel>
+
+            <TextBlock Name="ProcessDetailsTextBlock" Text="Select a process to see details" Margin="5"/>
+        </StackPanel>
     </Grid>
 </Window>
