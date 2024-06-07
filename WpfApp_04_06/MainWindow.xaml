@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock Text="Шлях до файлу:" Grid.Row="0"/>
+        <TextBox x:Name="FilePathTextBox" Grid.Row="0" Margin="100,0,0,0"/>
+
+        <TextBlock Text="Слово для пошуку:" Grid.Row="1"/>
+        <TextBox x:Name="WordTextBox" Grid.Row="1" Margin="100,0,0,0"/>
+
+        <Button Content="Пошук" Click="SearchButton_Click" Grid.Row="2" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+        <TextBlock Text="Результат:" Grid.Row="3"/>
+        <TextBox x:Name="ResultTextBox" Grid.Row="3" Margin="80,0,0,0" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>
