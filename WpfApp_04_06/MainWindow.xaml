@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <StackPanel>
+            <TextBox Name="IntervalTextBox" Width="100" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Text="1000"/>
+            <Button Name="UpdateButton" Content="Update Interval" Width="100" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="UpdateButton_Click"/>
+            <ListView Name="ProcessListView" Margin="10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="200"/>
+                        <GridViewColumn Header="PID" DisplayMemberBinding="{Binding Id}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Window>
